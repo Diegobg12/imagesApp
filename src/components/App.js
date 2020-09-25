@@ -1,7 +1,9 @@
 import { render } from '@testing-library/react';
 import React from 'react';
+import ImageList from './Imagelist';
 import SearchBar from './SearchBar';
 import unsplash from '../api/unsplash';
+
 
 class App extends React.Component{
 
@@ -18,6 +20,7 @@ class App extends React.Component{
         return (
         <div className="ui container" style={{marginTop: '10px'}}>
             <SearchBar onSubmit={this.onSearchSubmit}/>
+            <ImageList images={this.state.images}/>
             Found :{this.state.images.length} Images
         </div>
         )
